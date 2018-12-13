@@ -6,7 +6,9 @@ public class Car_Park {
 	
 
 	public static void main(String[] args) {
-
+		park("XYZ");
+		park("ABC");
+		unPark(5001);
 	}
 	
 	public static int park(String licence) {
@@ -19,5 +21,14 @@ public class Car_Park {
 			}
 		}	
 		return ticket;
+	}
+	
+	public static void unPark(int ticket) {
+		for(int i=0;i<spacesArray.length;i++) {
+			if(Space.getTicket(spacesArray[i]) == ticket) {
+				System.out.println("DELETED");
+				return;
+			}
+		}
 	}
 }

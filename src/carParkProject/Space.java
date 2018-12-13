@@ -1,11 +1,15 @@
 package carParkProject;
 
 public class Space {
-	int ticket;
+	static int ticket;
 	String licence;
 	
 	public Space(int ticket, String licence) {
-		this.ticket = ticket;
+		Space.ticket = ticket;
 		this.licence = licence;
+	}
+	
+	public static int getTicket(Space newSpace) {
+		return Space.ticket;
 	}
 }
