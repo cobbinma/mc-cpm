@@ -12,8 +12,9 @@ public class Car_Park {
 		compact();
 		for (int i = 0; i < spacesArray.length; i++) {
 			if(spacesArray[i] != null) {
-				System.out.println(Space.getLicence(spacesArray[i]));
-				System.out.println(Space.getTicket(spacesArray[i]));
+				System.out.print(Space.getLicence(spacesArray[i]) + ",");
+			}else {
+				System.out.print(",");
 			}
 		}
 	}
