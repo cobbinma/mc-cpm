@@ -1,15 +1,30 @@
 package carParkProject;
 
+import java.util.Scanner;
+
 public class Car_Park {
 	static int currentTicket = 5000;
 	static Space[] spacesArray = new Space[10];
 
 	public static void main(String[] args) {
-		park("XYZ");
-		park("ABC");
-		park("EFG");
-		unpark(5001);
-		compact();
+		
+		System.out.println("Please input command string:");
+		Scanner scanner = new Scanner(System.in);
+		String input = scanner.next();
+		scanner.close();
+		String[] inputArray = input.split(",");
+		for(int i=0;i<inputArray.length;i++) {
+			if(inputArray[i].startsWith("p")) {
+				park(inputArray[i].substring(1));
+			}else if(inputArray[i].startsWith("u")) {
+				unpark(Integer.parseInt(inputArray[i].substring(1)));
+			}else if(inputArray[i].equals("c")) {
+				compact();
+			}else {
+				System.out.println("Unknown command: " + inputArray[i]);
+			}
+		} 
+		
 		for (int i = 0; i < spacesArray.length; i++) {
 			if(spacesArray[i] != null) {
 				System.out.print(Space.getLicence(spacesArray[i]) + ",");
