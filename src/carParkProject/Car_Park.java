@@ -43,6 +43,7 @@ public class Car_Park {
 				return (currentTicket - 1);
 			}
 		}
+		System.out.println("No more spaces available.");
 		return ticket;
 	}
 
@@ -53,6 +54,7 @@ public class Car_Park {
 				return;
 			}
 		}
+		System.out.println("Cannot find car with ticket: " + ticket);
 	}
 
 	public static void compact() {
